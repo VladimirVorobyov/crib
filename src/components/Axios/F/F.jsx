@@ -11,7 +11,7 @@ export default function F() {
   useEffect (()=> featchData(),[])
   
   return (<div>
-    <img src={count} alt="asd"/>
+    <img src={count} alt="asd" width='500'/>
     
       <Button type="primary" onClick={()=>featchData()}>Click</Button>
    

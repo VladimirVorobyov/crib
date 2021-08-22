@@ -13,9 +13,7 @@ export default function VirtualDOM () {
     <h2>Virtual DOM</h2>
       
 <p className='virtual-text'>{text}</p>
-<p>
-
-    </p>
+<p>После обновление создается новое дерево и оно сравнивается с предедущим</p>
     </>
   ) 
 }
