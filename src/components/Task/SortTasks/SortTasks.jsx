@@ -1,16 +1,18 @@
-import { Select } from 'antd';
-import clases from './SortTasks.module.css';
-
-const { Option } = Select;
-
-export default function SortTasks({defaultValue, options, value, onChange}){
+export default function SortTasks({defaultValue, options, value, addItemSort,serchValue,addSerchValue}){
+  
   return(
-    <Select value={value} className={clases.list} defaultValue={defaultValue}
-      onChange={(e)=>onChange(e.target.value)} style={{ width: 200 }}>
-      <Option disabled value=" ">{defaultValue}</Option>
-      {options.map((el)=>{
-        return <Option value={el.value} key={el.value}>{el.name}</Option>
-      })}
-  </Select>
+    <div className='componets-container'>
+      <div>
+        <select value={value} onChange={(e)=>addItemSort(e.target.value)} >
+        <option disabled value="">{defaultValue}</option>
+        {options.map((el)=><option key={el.value} value={el.value}>{el.name}</option>)}
+      </select>
+      </div>
+      <div>
+        <input value={serchValue} onChange={(e)=>addSerchValue(e.target.value)} placeholder="Поиск задачи"></input>
+      </div>
+     
+    </div>
+     
   )
 }
